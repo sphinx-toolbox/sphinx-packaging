@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   sphinx-packaging demo — Python  documentation
+  </title>
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+  </script>
+  <script src="_static/jquery.js">
+  </script>
+  <script src="_static/underscore.js">
+  </script>
+  <script src="_static/doctools.js">
+  </script>
+  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
+ </head>
+ <body>
+  <div class="document">
+   <div class="documentwrapper">
+    <div class="bodywrapper">
+     <div class="body" role="main">
+      <div class="section" id="sphinx-packaging-demo">
+       <h1>
+        sphinx-packaging demo
+        <a class="headerlink" href="#sphinx-packaging-demo" title="Permalink to this headline">
+         ¶
+        </a>
+       </h1>
+       <p>
+        <span class="target" id="index-0">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0503">
+         <strong>
+          PEP 503
+         </strong>
+        </a>
+        is the specification for PyPI’s
+        <code class="docutils literal notranslate">
+         <span class="pre">
+          /simple
+         </span>
+        </code>
+        repository API, used by tools such as pip.
+       </p>
+       <p>
+        <span class="target" id="index-1">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0503#normalized-names">
+         <strong>
+          PEP 503#normalized-names
+         </strong>
+        </a>
+       </p>
+       <p>
+        The
+        <span class="target" id="index-2">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#name">
+         <span>
+          name
+         </span>
+        </a>
+        is
+        <span class="target" id="index-3">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0503#normalized-names">
+         <span>
+          normalized
+         </span>
+        </a>
+        per
+        <span class="target" id="index-4">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0503">
+         <strong>
+          PEP 503
+         </strong>
+        </a>
+       </p>
+       <p>
+        <span class="target" id="index-5">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#version">
+         <span>
+          version
+         </span>
+        </a>
+        must be a valid per
+        <span class="target" id="index-6">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0440">
+         <strong>
+          PEP 440
+         </strong>
+        </a>
+       </p>
+       <p>
+        <span class="target" id="index-7">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#requires-python">
+         <span>
+          requires-python
+         </span>
+        </a>
+        maps to
+        <span class="target" id="index-8">
+        </span>
+        <a class="pep reference external" href="https://packaging.python.org/specifications/core-metadata/#requires-python">
+         <span>
+          Requires-Python
+         </span>
+        </a>
+       </p>
+       <p>
+        The project’s
+        <span class="target" id="index-9">
+        </span>
+        <a class="pep reference external" href="https://packaging.python.org/specifications/core-metadata/#description">
+         <span>
+          description
+         </span>
+        </a>
+        may have multiple lines.
+       </p>
+       <p>
+        A wheel’s
+        <span class="target" id="index-10">
+        </span>
+        <a class="pep reference external" href="https://packaging.python.org/specifications/core-metadata/#supported-platform">
+         <span>
+          supported platforms
+         </span>
+        </a>
+        specify the OS and CPU for which the binary distribution was compiled.
+       </p>
+       <p>
+        Values in TOML must be one of the following types:
+       </p>
+       <ul class="simple">
+        <li>
+         <p>
+          <span class="target" id="index-11">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#string">
+           <span>
+            String
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-12">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#integer">
+           <span>
+            Integer
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-13">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#float">
+           <span>
+            Float
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-14">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#boolean">
+           <span>
+            Boolean
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-15">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#offset-date-time">
+           <span>
+            Offset Date-Time
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-16">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#local-date-time">
+           <span>
+            Local Date-Time
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-17">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#local-date">
+           <span>
+            Local Date
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-18">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#local-time">
+           <span>
+            Local Time
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-19">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#array">
+           <span>
+            Array
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-20">
+          </span>
+          <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#inline-table">
+           <span>
+            Inline Table
+           </span>
+          </a>
+         </p>
+        </li>
+       </ul>
+       <p>
+        <span class="target" id="index-21">
+        </span>
+        <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#inline-table">
+         <span>
+          Inline Tables
+         </span>
+        </a>
+        must be on a single line.
+       </p>
+       <p>
+        Unlike in YAML, a
+        <span class="target" id="index-22">
+        </span>
+        <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#string">
+         <span>
+          string
+         </span>
+        </a>
+        must be surrounded by quotation marks.
+       </p>
+       <p>
+        You can place multiple objects in an
+        <span class="target" id="index-23">
+        </span>
+        <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#array">
+         <span>
+          array
+         </span>
+        </a>
+        .
+       </p>
+       <p>
+        The following xrefs are not indexed:
+        <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#float">
+         <span>
+          Float
+         </span>
+        </a>
+        <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#array">
+         <span>
+          array
+         </span>
+        </a>
+        .
+       </p>
+       <p>
+        <span class="target" id="index-24">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621">
+         <strong>
+          PEP 621
+         </strong>
+        </a>
+        defines the following fields in the
+        <code class="docutils literal notranslate">
+         <span class="pre">
+          [project]
+         </span>
+        </code>
+        table:
+       </p>
+       <ul class="simple">
+        <li>
+         <p>
+          <span class="target" id="index-25">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#name">
+           <span>
+            name
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-26">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#version">
+           <span>
+            version
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-27">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#description">
+           <span>
+            description
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-28">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#readme">
+           <span>
+            readme
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-29">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#requires-python">
+           <span>
+            requires-python
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-30">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#license">
+           <span>
+            license
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-31">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#authors-maintainers">
+           <span>
+            authors
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-32">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#authors-maintainers">
+           <span>
+            maintainers
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-33">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#keywords">
+           <span>
+            keywords
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-34">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#classifiers">
+           <span>
+            classifiers
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-35">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#urls">
+           <span>
+            urls
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-36">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#scripts">
+           <span>
+            scripts
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-37">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#gui-scripts">
+           <span>
+            gui-scripts
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-38">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#entry-points">
+           <span>
+            entry-points
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-39">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#dependencies-optional-dependencies">
+           <span>
+            dependencies
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-40">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#dependencies-optional-dependencies">
+           <span>
+            optional-dependencies
+           </span>
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          <span class="target" id="index-41">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#dynamic">
+           <span>
+            dynamic
+           </span>
+          </a>
+         </p>
+        </li>
+       </ul>
+       <p>
+        <span class="target" id="index-42">
+        </span>
+        <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0621#authors-maintainers">
+         <span>
+          authors and maintainers
+         </span>
+        </a>
+        function the same; the difference is left up to the backend.
+       </p>
+       <p>
+        This PEP is invalid:
+        <a href="#id1">
+         <span class="problematic" id="id2">
+          :pep:`abc`
+         </span>
+        </a>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="clearer">
+   </div>
+  </div>
+ </body>
+</html>
