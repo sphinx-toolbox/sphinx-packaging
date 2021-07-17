@@ -21,8 +21,6 @@ sphinx-packaging
 	  - |actions_linux| |actions_windows| |actions_macos| |coveralls|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
-	* - Anaconda
-	  - |conda-version| |conda-platform|
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
@@ -86,14 +84,6 @@ sphinx-packaging
 	:target: https://pypi.org/project/sphinx-packaging/
 	:alt: PyPI - Wheel
 
-.. |conda-version| image:: https://img.shields.io/conda/v/domdfcoding/sphinx-packaging?logo=anaconda
-	:target: https://anaconda.org/domdfcoding/sphinx-packaging
-	:alt: Conda - Package Version
-
-.. |conda-platform| image:: https://img.shields.io/conda/pn/domdfcoding/sphinx-packaging?label=conda%7Cplatform
-	:target: https://anaconda.org/domdfcoding/sphinx-packaging
-	:alt: Conda - Platform
-
 .. |license| image:: https://img.shields.io/github/license/sphinx-toolbox/sphinx-packaging
 	:target: https://github.com/sphinx-toolbox/sphinx-packaging/blob/master/LICENSE
 	:alt: License
@@ -123,27 +113,12 @@ Installation
 
 .. start installation
 
-``sphinx-packaging`` can be installed from PyPI or Anaconda.
+``sphinx-packaging`` can be installed from PyPI.
 
 To install with ``pip``:
 
 .. code-block:: bash
 
 	$ python -m pip install sphinx-packaging
-
-To install with ``conda``:
-
-	* First add the required channels
-
-	.. code-block:: bash
-
-		$ conda config --add channels https://conda.anaconda.org/conda-forge
-		$ conda config --add channels https://conda.anaconda.org/domdfcoding
-
-	* Then install
-
-	.. code-block:: bash
-
-		$ conda install sphinx-packaging
 
 .. end installation

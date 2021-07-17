@@ -12,6 +12,7 @@ license: 'BSD'
 short_desc: 'A collection of Sphinx utilities related to Python packaging.'
 
 use_whey: true
+enable_conda: false
 python_deploy_version: 3.7
 #min_coverage: 90
 docs_fail_on_warning: true
