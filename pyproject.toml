@@ -24,10 +24,6 @@ Homepage = "https://github.com/sphinx-toolbox/sphinx-packaging"
 "Source Code" = "https://github.com/sphinx-toolbox/sphinx-packaging"
 Documentation = "https://sphinx-packaging.readthedocs.io/en/latest"
 
-[tool.mkrecipe]
-conda-channels = [ "conda-forge", "domdfcoding",]
-extras = "all"
-
 [tool.whey]
 base-classifiers = [
     "Development Status :: 4 - Beta",
