@@ -64,7 +64,7 @@ Roles
 	The title of the directive (either implicit, :samp:`:core-meta:\`title\``,
 	or explicit :samp:`:core-meta:\`title <target>\``) is inserted into the document.
 	With supported builders is a hyperlink to the specified field in the specification
-	on packaging.python.org.
+	on `packaging.python.org`_.
 	This role also generates an appropriate index entry.
 
 	:bold-title:`Examples:`
@@ -137,4 +137,5 @@ Configuration
 
 .. _Python Enhancement Proposal: https://www.python.org/dev/peps/
 .. _core metadata: https://packaging.python.org/specifications/core-metadata/
+.. _packaging.python.org: https://packaging.python.org
 .. _TOML specification: https://toml.io/en/v1.0.0
