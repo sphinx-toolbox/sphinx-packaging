@@ -519,6 +519,329 @@
          </span>
         </a>
        </p>
+       <dl class="std tconf">
+        <dt id="tconf-project.name">
+         <code class="sig-prename descclassname">
+          project.
+         </code>
+         <code class="sig-name descname">
+          name
+         </code>
+         <a class="headerlink" href="#tconf-project.name" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <div class="line-block">
+          <div class="line">
+           <strong>
+            Type:
+           </strong>
+           <span class="target" id="index-44">
+           </span>
+           <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#string">
+            <span>
+             String
+            </span>
+           </a>
+          </div>
+          <div class="line">
+           <strong>
+            Required:
+           </strong>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             True
+            </span>
+           </code>
+          </div>
+         </div>
+         <p>
+          The name of the project.
+         </p>
+        </dd>
+       </dl>
+       <dl class="std tconf">
+        <dt id="tconf-project.version">
+         <code class="sig-prename descclassname">
+          project.
+         </code>
+         <code class="sig-name descname">
+          version
+         </code>
+         <a class="headerlink" href="#tconf-project.version" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <div class="line-block">
+          <div class="line">
+           <strong>
+            Type:
+           </strong>
+           <span class="target" id="index-45">
+           </span>
+           <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#string">
+            <span>
+             String
+            </span>
+           </a>
+          </div>
+          <div class="line">
+           <strong>
+            Required:
+           </strong>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             True
+            </span>
+           </code>
+          </div>
+         </div>
+         <p>
+          The version of the project as supported by
+          <span class="target" id="index-46">
+          </span>
+          <a class="pep reference external" href="https://www.python.org/dev/peps/pep-0440">
+           <strong>
+            PEP 440
+           </strong>
+          </a>
+          .
+         </p>
+        </dd>
+       </dl>
+       <dl class="std tconf">
+        <dt id="tconf-description">
+         <code class="sig-name descname">
+          description
+         </code>
+         <a class="headerlink" href="#tconf-description" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <div class="line-block">
+          <div class="line">
+           <strong>
+            Type:
+           </strong>
+           <span class="target" id="index-47">
+           </span>
+           <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#string">
+            <span>
+             String
+            </span>
+           </a>
+          </div>
+          <div class="line">
+           <strong>
+            Required:
+           </strong>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             False
+            </span>
+           </code>
+          </div>
+          <div class="line">
+           <strong>
+            Default:
+           </strong>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             'This
+            </span>
+            <span class="pre">
+             is
+            </span>
+            <span class="pre">
+             the
+            </span>
+            <span class="pre">
+             description'
+            </span>
+           </code>
+          </div>
+         </div>
+         <p>
+          A short summary description of the project.
+         </p>
+        </dd>
+       </dl>
+       <p>
+        <a class="reference internal" href="#tconf-project.name">
+         <code class="xref std std-tconf docutils literal notranslate">
+          <span class="pre">
+           project.name
+          </span>
+         </code>
+        </a>
+        and
+        <a class="reference internal" href="#tconf-project.version">
+         <code class="xref std std-tconf docutils literal notranslate">
+          <span class="pre">
+           version
+          </span>
+         </code>
+        </a>
+        are required.
+Some backends may be able to determine a value for
+        <code class="xref std std-tconf docutils literal notranslate">
+         <span class="pre">
+          version
+         </span>
+        </code>
+        dynamically.
+       </p>
+       <p>
+        <a class="reference internal" href="#tconf-description">
+         <code class="xref std std-tconf docutils literal notranslate">
+          <span class="pre">
+           description
+          </span>
+         </code>
+        </a>
+        will be displayed this towards the top of the project page on PyPI.
+       </p>
+       <p>
+        Links can also be written with a shorter name:
+        <a class="reference internal" href="#tconf-project.name">
+         <code class="xref std std-tconf docutils literal notranslate">
+          <span class="pre">
+           name
+          </span>
+         </code>
+        </a>
+        .
+       </p>
+       <dl class="std tconf">
+        <dt>
+         <code class="sig-name descname">
+          description
+         </code>
+        </dt>
+        <dd>
+         <div class="line-block">
+          <div class="line">
+           <strong>
+            Type:
+           </strong>
+           <span class="target" id="index-48">
+           </span>
+           <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#string">
+            <span>
+             String
+            </span>
+           </a>
+          </div>
+          <div class="line">
+           <strong>
+            Required:
+           </strong>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             False
+            </span>
+           </code>
+          </div>
+          <div class="line">
+           <strong>
+            Default:
+           </strong>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             'This
+            </span>
+            <span class="pre">
+             is
+            </span>
+            <span class="pre">
+             the
+            </span>
+            <span class="pre">
+             description'
+            </span>
+           </code>
+          </div>
+         </div>
+         <p>
+          Another description, perhaps in a different section of
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            pyproject.toml
+           </span>
+          </code>
+          .
+         </p>
+        </dd>
+       </dl>
+       <dl class="std tconf">
+        <dt id="tconf-tool.something.name">
+         <code class="sig-prename descclassname">
+          tool.something.
+         </code>
+         <code class="sig-name descname">
+          name
+         </code>
+         <a class="headerlink" href="#tconf-tool.something.name" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <div class="line-block">
+          <div class="line">
+           <strong>
+            Type:
+           </strong>
+           <span class="target" id="index-49">
+           </span>
+           <a class="toml-xref reference external" href="https://toml.io/en/v0.5.0#string">
+            <span>
+             String
+            </span>
+           </a>
+          </div>
+          <div class="line">
+           <strong>
+            Required:
+           </strong>
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             True
+            </span>
+           </code>
+          </div>
+         </div>
+         <p>
+          Another name, perhaps in a different section of
+          <code class="docutils literal notranslate">
+           <span class="pre">
+            pyproject.toml
+           </span>
+          </code>
+          .
+         </p>
+        </dd>
+       </dl>
+       <p>
+        The
+        <code class="xref std std-tconf docutils literal notranslate">
+         <span class="pre">
+          license
+         </span>
+        </code>
+        field has not been documented yet.
+       </p>
+       <p>
+        There are two
+        <code class="xref std std-tconf docutils literal notranslate">
+         <span class="pre">
+          name
+         </span>
+        </code>
+        directives, which is ambiguous.
+       </p>
       </div>
      </div>
     </div>

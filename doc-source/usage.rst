@@ -4,6 +4,60 @@ Usage
 
 .. extensions:: sphinx_packaging
 
+
+Directives
+--------------
+
+
+.. rst:directive:: .. tconf:: name
+
+	Used to document a TOML configuration field, for example in :pep:`621` metadata.
+
+	.. rst:directive:option:: type
+		:type: string
+
+		Indicates the field's type.
+
+	.. rst:directive:option:: required
+		:type: flag
+
+		Indicates the whether a value is required for the field.
+
+	.. rst:directive:option:: default
+		:type: string
+
+		Indicates the default value for the field.
+
+	.. rst:directive:option:: noindex
+		:type: flag
+
+		Disables the index entry and cross-referencing for this field.
+
+
+	:bold-title:`Examples:`
+
+	.. rest-example::
+
+		.. tconf:: project.name
+			:type: :toml:`String`
+			:required: True
+
+			The name of the project.
+
+		.. tconf:: project.version
+			:type: :toml:`String`
+			:required: True
+
+			The version of the project as supported by :pep:`440`.
+
+		.. tconf:: description
+			:type: :toml:`String`
+			:default: ``'This is the description'``
+			:required: False
+
+			A short summary description of the project.
+
+
 Roles
 --------
 
@@ -116,6 +170,22 @@ Roles
 		:ref:`Click here <genindex>` to see the index.
 
 
+.. rst:role:: tconf
+
+	Role which provides a cross-reference to a :rst:dir:`tconf` directive.
+
+
+	:bold-title:`Examples:`
+
+	.. rest-example::
+
+		:tconf:`project.name` and :tconf:`~project.version` are required.
+		Some backends may be able to determine a value for :tconf:`version` dynamically.
+
+		:tconf:`description` will be displayed this towards the top of the project page on PyPI.
+
+		Links can also be written with a shorter name: :tconf:`~.name`.
+
 
 Configuration
 ----------------
@@ -133,6 +203,26 @@ Configuration
 
 		# conf.py
 		toml_spec_version = "0.5.0"
+
+
+.. confval:: tconf_show_full_name
+	:type: :py:class:`bool`
+	:required: False
+	:default: True
+
+	Whether to show the full name for field.
+
+	For example, with ``tconf_show_full_name = True``:
+
+	.. tconf:: project.description
+		:type: :toml:`String`
+		:noindex:
+
+	And with ``tconf_show_full_name = False``:
+
+	.. tconf:: description
+		:type: :toml:`String`
+		:noindex:
 
 
 .. _Python Enhancement Proposal: https://www.python.org/dev/peps/

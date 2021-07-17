@@ -165,6 +165,10 @@ class CoreMetadata(ReferenceRole):
 	def run(self) -> Tuple[List[Node], List[system_message]]:
 		"""
 		Process the role.
+
+		:rtype:
+
+		.. latex:clearpage::
 		"""
 
 		target_id = f"index-{self.env.new_serialno('index')}"

@@ -61,3 +61,53 @@ The following xrefs are not indexed: :toml:`!Float` :toml:`array <!Array>`.
 :pep621:`authors and maintainers <authors/maintainers>` function the same; the difference is left up to the backend.
 
 This PEP is invalid: :pep:`abc`
+
+
+.. tconf:: project.name
+	:type: :toml:`String`
+	:required: True
+
+	The name of the project.
+
+
+.. tconf:: project.version
+	:type: :toml:`String`
+	:required: True
+
+	The version of the project as supported by :pep:`440`.
+
+
+.. tconf:: description
+	:type: :toml:`String`
+	:default: ``'This is the description'``
+	:required: False
+
+	A short summary description of the project.
+
+
+:tconf:`project.name` and :tconf:`~project.version` are required.
+Some backends may be able to determine a value for :tconf:`version` dynamically.
+
+:tconf:`description` will be displayed this towards the top of the project page on PyPI.
+
+Links can also be written with a shorter name: :tconf:`~.name`.
+
+
+.. tconf:: description
+	:type: :toml:`String`
+	:default: ``'This is the description'``
+	:required: False
+	:noindex:
+
+	Another description, perhaps in a different section of ``pyproject.toml``.
+
+.. tconf:: tool.something.name
+	:type: :toml:`String`
+	:required: True
+
+	Another name, perhaps in a different section of ``pyproject.toml``.
+
+
+The :tconf:`license` field has not been documented yet.
+
+There are two :tconf:`name` directives, which is ambiguous.

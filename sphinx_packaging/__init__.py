@@ -58,6 +58,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 	"""
 
 	app.setup_extension("sphinx_packaging.peps")
+	app.setup_extension("sphinx_packaging.tconf")
 	app.setup_extension("sphinx_packaging.toml")
 
 	return {

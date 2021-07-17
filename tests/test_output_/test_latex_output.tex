@@ -203,6 +203,104 @@ The following xrefs are not indexed: \sphinxhref{https://toml.io/en/v0.5.0\#floa
 \index{Python Enhancement Proposals@\spxentry{Python Enhancement Proposals}!PEP 621\#authors\sphinxhyphen{}maintainers@\spxentry{PEP 621\#authors\sphinxhyphen{}maintainers}}\sphinxhref{https://www.python.org/dev/peps/pep-0621\#authors-maintainers}{authors and maintainers} function the same; the difference is left up to the backend.
 
 This PEP is invalid: {\color{red}\bfseries{}:pep:\textasciigrave{}abc\textasciigrave{}}
+\index{project.name@\spxentry{project.name}!TOML configuration field@\spxentry{TOML configuration field}}\index{TOML configuration field@\spxentry{TOML configuration field}!project.name@\spxentry{project.name}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{index:tconf-project.name}}\pysigline{\sphinxcode{\sphinxupquote{project.}}\sphinxbfcode{\sphinxupquote{name}}}~
+\vspace{-45px}
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{Type:} \index{TOML: String@\spxentry{TOML: String}}\sphinxhref{https://toml.io/en/v0.5.0\#string}{String}
+\item[] \sphinxstylestrong{Required:} \sphinxcode{\sphinxupquote{True}}
+\end{DUlineblock}
+
+\vspace{-25px}
+
+The name of the project.
+
+\end{fulllineitems}
+
+\index{project.version@\spxentry{project.version}!TOML configuration field@\spxentry{TOML configuration field}}\index{TOML configuration field@\spxentry{TOML configuration field}!project.version@\spxentry{project.version}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{index:tconf-project.version}}\pysigline{\sphinxcode{\sphinxupquote{project.}}\sphinxbfcode{\sphinxupquote{version}}}~
+\vspace{-45px}
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{Type:} \index{TOML: String@\spxentry{TOML: String}}\sphinxhref{https://toml.io/en/v0.5.0\#string}{String}
+\item[] \sphinxstylestrong{Required:} \sphinxcode{\sphinxupquote{True}}
+\end{DUlineblock}
+
+\vspace{-25px}
+
+The version of the project as supported by \index{Python Enhancement Proposals@\spxentry{Python Enhancement Proposals}!PEP 440@\spxentry{PEP 440}}\sphinxhref{https://www.python.org/dev/peps/pep-0440}{\sphinxstylestrong{PEP 440}}.
+
+\end{fulllineitems}
+
+\index{description@\spxentry{description}!TOML configuration field@\spxentry{TOML configuration field}}\index{TOML configuration field@\spxentry{TOML configuration field}!description@\spxentry{description}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{index:tconf-description}}\pysigline{\sphinxbfcode{\sphinxupquote{description}}}~
+\vspace{-45px}
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{Type:} \index{TOML: String@\spxentry{TOML: String}}\sphinxhref{https://toml.io/en/v0.5.0\#string}{String}
+\item[] \sphinxstylestrong{Required:} \sphinxcode{\sphinxupquote{False}}
+\item[] \sphinxstylestrong{Default:} \sphinxcode{\sphinxupquote{\textquotesingle{}This is the description\textquotesingle{}}}
+\end{DUlineblock}
+
+\vspace{-25px}
+
+A short summary description of the project.
+
+\end{fulllineitems}
+
+
+{\hyperref[\detokenize{index:tconf-project.name}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{project.name}}}}} and {\hyperref[\detokenize{index:tconf-project.version}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{version}}}}} are required.
+Some backends may be able to determine a value for \sphinxcode{\sphinxupquote{version}} dynamically.
+
+{\hyperref[\detokenize{index:tconf-description}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{description}}}}} will be displayed this towards the top of the project page on PyPI.
+
+Links can also be written with a shorter name: {\hyperref[\detokenize{index:tconf-project.name}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{name}}}}}.
+
+
+\begin{fulllineitems}
+\pysigline{\sphinxbfcode{\sphinxupquote{description}}}~
+\vspace{-45px}
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{Type:} \index{TOML: String@\spxentry{TOML: String}}\sphinxhref{https://toml.io/en/v0.5.0\#string}{String}
+\item[] \sphinxstylestrong{Required:} \sphinxcode{\sphinxupquote{False}}
+\item[] \sphinxstylestrong{Default:} \sphinxcode{\sphinxupquote{\textquotesingle{}This is the description\textquotesingle{}}}
+\end{DUlineblock}
+
+\vspace{-25px}
+
+Another description, perhaps in a different section of \sphinxcode{\sphinxupquote{pyproject.toml}}.
+
+\end{fulllineitems}
+
+\index{tool.something.name@\spxentry{tool.something.name}!TOML configuration field@\spxentry{TOML configuration field}}\index{TOML configuration field@\spxentry{TOML configuration field}!tool.something.name@\spxentry{tool.something.name}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{index:tconf-tool.something.name}}\pysigline{\sphinxcode{\sphinxupquote{tool.something.}}\sphinxbfcode{\sphinxupquote{name}}}~
+\vspace{-45px}
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{Type:} \index{TOML: String@\spxentry{TOML: String}}\sphinxhref{https://toml.io/en/v0.5.0\#string}{String}
+\item[] \sphinxstylestrong{Required:} \sphinxcode{\sphinxupquote{True}}
+\end{DUlineblock}
+
+\vspace{-25px}
+
+Another name, perhaps in a different section of \sphinxcode{\sphinxupquote{pyproject.toml}}.
+
+\end{fulllineitems}
+
+
+The \sphinxcode{\sphinxupquote{license}} field has not been documented yet.
+
+There are two \sphinxcode{\sphinxupquote{name}} directives, which is ambiguous.
 
 
 
