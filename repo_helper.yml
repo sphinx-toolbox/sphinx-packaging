@@ -75,3 +75,6 @@ third_party_version_matrix:
     - 3.3
     - 3.4
     - 3.5
+
+mypy_deps:
+ - types-docutils

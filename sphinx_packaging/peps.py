@@ -41,9 +41,9 @@ import re
 from typing import Any, Dict, List, Optional, Tuple
 
 # 3rd party
-from docutils import nodes  # type: ignore
-from docutils.nodes import Node, system_message, unescape  # type: ignore
-from docutils.parsers.rst.states import Inliner  # type: ignore
+from docutils import nodes
+from docutils.nodes import Node, system_message, unescape
+from docutils.parsers.rst.states import Inliner
 from sphinx import addnodes
 from sphinx.application import Sphinx
 from sphinx.locale import _
@@ -75,7 +75,7 @@ class PEP(ReferenceRole):
 
 		index = addnodes.index(entries=entries)
 		target = nodes.target('', '', ids=[target_id])
-		self.inliner.document.note_explicit_target(target)
+		self.inliner.document.note_explicit_target(target)  # type: ignore
 
 		try:
 			refuri = self.build_uri()
@@ -86,8 +86,11 @@ class PEP(ReferenceRole):
 				title = f"PEP {self.title}"
 				reference += nodes.strong(title, title)
 		except ValueError:
-			msg = self.inliner.reporter.error(f"invalid PEP number {self.target}", line=self.lineno)
-			prb = self.inliner.problematic(self.rawtext, self.rawtext, msg)
+			msg = self.inliner.reporter.error(  # type: ignore
+				f"invalid PEP number {self.target}",
+				line=self.lineno,
+				)
+			prb = self.inliner.problematic(self.rawtext, self.rawtext, msg)  # type: ignore
 			return [prb], [msg]
 
 		return [index, target, reference], []
@@ -100,7 +103,7 @@ class PEP(ReferenceRole):
 		assert self.target is not None
 		assert self.inliner is not None
 
-		base_url: str = self.inliner.document.settings.pep_base_url
+		base_url: str = self.inliner.document.settings.pep_base_url  # type: ignore
 		ret = self.target.split('#', 1)
 
 		if len(ret) == 2:
@@ -173,7 +176,7 @@ class CoreMetadata(ReferenceRole):
 
 		index = addnodes.index(entries=entries)
 		target = nodes.target('', '', ids=[target_id])
-		self.inliner.document.note_explicit_target(target)
+		self.inliner.document.note_explicit_target(target)  # type: ignore
 
 		refuri = self.build_uri()
 		reference = nodes.reference('', '', internal=False, refuri=refuri, classes=["pep"])
