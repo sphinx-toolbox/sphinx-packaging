@@ -38,7 +38,7 @@ sphinx_conf_epilogue:
  - toctree_plus_types.add("confval")
 # - needspace_amount = "4\\baselineskip"
 # - latex_elements["preamble"] = "\\usepackage{multicol}"
- - ignore_missing_xrefs = ["^docutils"]
+ - ignore_missing_xrefs = ["^docutils", "^sphinx.roles.XRefRole$", "^sphinx.domains.std.GenericObject$"]
  - autosummary_widths_builders = ["latex"]
 
 extra_sphinx_extensions:

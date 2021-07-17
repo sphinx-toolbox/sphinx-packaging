@@ -80,5 +80,5 @@ def setup(app):
 nitpicky = True
 toml_spec_version = "0.5.0"
 toctree_plus_types.add("confval")
-ignore_missing_xrefs = ["^docutils"]
+ignore_missing_xrefs = ["^docutils", "^sphinx.roles.XRefRole$", "^sphinx.domains.std.GenericObject$"]
 autosummary_widths_builders = ["latex"]

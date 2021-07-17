@@ -59,7 +59,7 @@ The :rst:dir:`tconf` directive and role for configuration fields in ``pyproject.
 #
 
 # stdlib
-from typing import Any, Callable, Dict, List, Mapping, Optional, Tuple, cast
+from typing import Any, Callable, Dict, List, Mapping, Optional, Tuple, cast, Type
 
 # 3rd party
 from docutils import nodes
@@ -270,8 +270,6 @@ def resolve_xref(
 	if node.get("refdomain", None) != "std":  # pragma: no cover
 		return None
 	elif node.get("reftype", None) != "tconf":  # pragma: no cover
-		return None
-	elif not node.get("refspecific", False):  # pragma: no cover
 		return None
 	elif not node.get("reftarget"):  # pragma: no cover
 		return None
