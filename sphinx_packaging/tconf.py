@@ -59,7 +59,7 @@ The :rst:dir:`tconf` directive and role for configuration fields in ``pyproject.
 #
 
 # stdlib
-from typing import Any, Callable, Dict, List, Mapping, Optional, Tuple, cast, Type
+from typing import Any, Callable, Dict, List, Mapping, Optional, Tuple, Type, cast
 
 # 3rd party
 from docutils import nodes
