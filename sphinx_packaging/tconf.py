@@ -227,6 +227,8 @@ class TConfXRefRole(XRefRole):
 		:param target: The target of the XRef role. (:samp:`:tconf:\`title <target>\``)
 
 		:returns: A tuple of ``(title, target)``.
+
+		.. latex:clearpage::
 		"""
 
 		if not has_explicit_title:

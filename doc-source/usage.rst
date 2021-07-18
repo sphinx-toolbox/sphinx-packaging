@@ -187,6 +187,9 @@ Roles
 		Links can also be written with a shorter name: :tconf:`~.name`.
 
 
+.. latex:clearpage::
+
+
 Configuration
 ----------------
 
