@@ -66,12 +66,12 @@ class PEP(ReferenceRole):
 		Process the role.
 		"""
 
-		target_id = f"index-{self.env.new_serialno('index')}"
-		entries = [("single", _("Python Enhancement Proposals; PEP %s") % self.target, target_id, '', None)]
-
 		assert self.title is not None
 		assert self.target is not None
 		assert self.inliner is not None
+
+		target_id = f"index-{self.env.new_serialno('index')}"
+		entries = [("single", _("Python Enhancement Proposals; PEP %s") % self.target, target_id, '', None)]
 
 		index = addnodes.index(entries=entries)
 		target = nodes.target('', '', ids=[target_id])
@@ -171,12 +171,12 @@ class CoreMetadata(ReferenceRole):
 		.. latex:clearpage::
 		"""
 
-		target_id = f"index-{self.env.new_serialno('index')}"
-		entries = [("single", _("Core Metadata Field %s") % self.target, target_id, '', None)]
-
 		assert self.title is not None
 		assert self.target is not None
 		assert self.inliner is not None
+
+		target_id = f"index-{self.env.new_serialno('index')}"
+		entries = [("single", _("Core Metadata Field %s") % self.target, target_id, '', None)]
 
 		index = addnodes.index(entries=entries)
 		target = nodes.target('', '', ids=[target_id])
@@ -194,7 +194,6 @@ class CoreMetadata(ReferenceRole):
 		"""
 
 		assert self.target is not None
-		assert self.inliner is not None
 
 		base_url: str = "https://packaging.python.org/specifications/core-metadata/"
 		target = re.sub(r"[\W]+", '-', self.target.lower()).strip('-')

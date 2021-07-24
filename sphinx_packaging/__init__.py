@@ -38,9 +38,6 @@ from typing import Any, Dict
 # 3rd party
 from sphinx.application import Sphinx
 
-# this package
-from sphinx_packaging.peps import PEP, CoreMetadata, PEP621Section
-
 __all__ = ["setup"]
 
 __author__: str = "Dominic Davis-Foster"
