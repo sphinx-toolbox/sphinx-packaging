@@ -149,6 +149,7 @@ Contents
 	:github:
 	:pypi: sphinx-packaging
 
+	Contributing Guide <https://contributing-to-sphinx-toolbox.readthedocs.io/en/latest/>
 
 .. start links
 
