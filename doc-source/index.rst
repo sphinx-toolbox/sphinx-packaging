@@ -143,6 +143,7 @@ Contents
 	api/sphinx-packaging
 	api/*
 	Source
+	license
 
 .. sidebar-links::
 	:caption: Links
