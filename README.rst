@@ -56,8 +56,8 @@ sphinx-packaging
 	:target: https://github.com/sphinx-toolbox/sphinx-packaging/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/sphinx-toolbox/sphinx-packaging/requirements.svg?branch=master
-	:target: https://requires.io/github/sphinx-toolbox/sphinx-packaging/requirements/?branch=master
+.. |requires| image:: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-packaging/badge.svg
+	:target: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-packaging/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/sphinx-toolbox/sphinx-packaging/master?logo=coveralls
