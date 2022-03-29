@@ -228,7 +228,7 @@ Configuration
 		:noindex:
 
 
-.. _Python Enhancement Proposal: https://www.python.org/dev/peps/
+.. _Python Enhancement Proposal: https://peps.python.org/
 .. _core metadata: https://packaging.python.org/specifications/core-metadata/
 .. _packaging.python.org: https://packaging.python.org
 .. _TOML specification: https://toml.io/en/v1.0.0
