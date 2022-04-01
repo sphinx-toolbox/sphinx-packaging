@@ -17,7 +17,7 @@ python_deploy_version: 3.7
 min_coverage: 100
 docs_fail_on_warning: true
 sphinx_html_theme: furo
-mypy_version: "0.910"
+mypy_version: "0.942"
 
 conda_channels:
  - conda-forge
