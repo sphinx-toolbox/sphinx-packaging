@@ -107,7 +107,7 @@ class TOMLConf(GenericObject):
 	doc_field_types: List = []
 	content: StringList
 
-	option_spec: Mapping[str, Callable[[str], Any]] = {  # type: ignore
+	option_spec: Mapping[str, Callable[[str], Any]] = {  # type: ignore[assignment]
 		"type": directives.unchanged_required,
 		"required": directives.unchanged_required,
 		"default": directives.unchanged_required,

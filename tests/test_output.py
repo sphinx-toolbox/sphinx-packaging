@@ -3,7 +3,7 @@ import re
 import shutil
 
 # 3rd party
-import bs4.element  # type: ignore
+import bs4.element  # type: ignore[import]
 import pytest
 from bs4 import BeautifulSoup
 from coincidence.regressions import AdvancedFileRegressionFixture
@@ -14,7 +14,7 @@ from sphinx_toolbox.testing import HTMLRegressionFixture
 
 
 @pytest.fixture()
-def doc_root(tmp_pathplus: PathPlus):
+def doc_root(tmp_pathplus: PathPlus) -> None:
 	doc_root = tmp_pathplus.parent / "test-packaging"
 	doc_root.maybe_make()
 	(doc_root / "conf.py").write_lines([
@@ -27,14 +27,14 @@ def doc_root(tmp_pathplus: PathPlus):
 
 @pytest.mark.usefixtures("doc_root")
 @pytest.mark.sphinx("html", testroot="test-packaging")
-def test_build_example(app: Sphinx):
+def test_build_example(app: Sphinx) -> None:
 	app.build()
 	app.build()
 
 
 @pytest.mark.usefixtures("doc_root")
 @pytest.mark.sphinx("html", testroot="test-packaging")
-def test_html_output(app: Sphinx, html_regression: HTMLRegressionFixture):
+def test_html_output(app: Sphinx, html_regression: HTMLRegressionFixture) -> None:
 	app.build()
 
 	# capout = app._warning.getvalue()
@@ -69,7 +69,10 @@ def test_html_output(app: Sphinx, html_regression: HTMLRegressionFixture):
 
 @pytest.mark.usefixtures("doc_root")
 @pytest.mark.sphinx("latex", testroot="test-packaging")
-def test_latex_output(app: Sphinx, advanced_file_regression: AdvancedFileRegressionFixture):
+def test_latex_output(
+		app: Sphinx,
+		advanced_file_regression: AdvancedFileRegressionFixture,
+		) -> None:
 
 	assert app.builder.name.lower() == "latex"
 
