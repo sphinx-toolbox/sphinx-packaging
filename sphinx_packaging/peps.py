@@ -57,18 +57,14 @@ class PEP(ReferenceRole):
 	Sphinx role for referencing a PEP or a section thereof.
 	"""
 
-	title: Optional[str]
-	target: Optional[str]
-	has_explicit_title: Optional[bool]
+	title: str
+	target: str
+	has_explicit_title: bool
 
 	def run(self) -> Tuple[List[Node], List[system_message]]:
 		"""
 		Process the role.
 		"""
-
-		assert self.title is not None
-		assert self.target is not None
-		assert self.inliner is not None
 
 		target_id = f"index-{self.env.new_serialno('index')}"
 		entries = [("single", _("Python Enhancement Proposals; PEP %s") % self.target, target_id, '', None)]
@@ -99,9 +95,6 @@ class PEP(ReferenceRole):
 		"""
 		Constrict the target URI for the reference node.
 		"""
-
-		assert self.target is not None
-		assert self.inliner is not None
 
 		base_url: str = self.inliner.document.settings.pep_base_url  # type: ignore[attr-defined]
 		if base_url == "https://www.python.org/dev/peps/":
@@ -161,9 +154,9 @@ class CoreMetadata(ReferenceRole):
 	.. _core metadata: https://packaging.python.org/specifications/core-metadata/
 	"""
 
-	title: Optional[str]
-	target: Optional[str]
-	has_explicit_title: Optional[bool]
+	title: str
+	target: str
+	has_explicit_title: bool
 
 	def run(self) -> Tuple[List[Node], List[system_message]]:
 		"""
@@ -173,10 +166,6 @@ class CoreMetadata(ReferenceRole):
 
 		.. latex:clearpage::
 		"""
-
-		assert self.title is not None
-		assert self.target is not None
-		assert self.inliner is not None
 
 		target_id = f"index-{self.env.new_serialno('index')}"
 		entries = [("single", _("Core Metadata Field %s") % self.target, target_id, '', None)]
@@ -195,8 +184,6 @@ class CoreMetadata(ReferenceRole):
 		"""
 		Constrict the target URI for the reference node.
 		"""
-
-		assert self.target is not None
 
 		base_url: str = "https://packaging.python.org/specifications/core-metadata/"
 		target = re.sub(r"[\W]+", '-', self.target.lower()).strip('-')

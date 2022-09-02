@@ -53,18 +53,14 @@ class TOML(ReferenceRole):
 	Sphinx role for referencing a section of the TOML specification.
 	"""
 
-	title: Optional[str]
-	target: Optional[str]
-	has_explicit_title: Optional[bool]
+	title: str
+	target: str
+	has_explicit_title: bool
 
 	def run(self) -> Tuple[List[Node], List[system_message]]:
 		"""
 		Process the role.
 		"""
-
-		assert self.title is not None
-		assert self.target is not None
-		assert self.inliner is not None
 
 		if self.target.startswith('!'):
 			xref = False
@@ -97,9 +93,6 @@ class TOML(ReferenceRole):
 		"""
 		Constrict the target URI for the reference node.
 		"""
-
-		assert self.target is not None
-		assert self.inliner is not None
 
 		toml_spec_version = getattr(self.config, "toml_spec_version", "1.0.0").lstrip('v')
 
