@@ -62,6 +62,8 @@ class TOML(ReferenceRole):
 		Process the role.
 		"""
 
+		assert self.inliner is not None
+
 		if self.target.startswith('!'):
 			xref = False
 			if self.title == self.target:

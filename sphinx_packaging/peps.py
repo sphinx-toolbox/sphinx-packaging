@@ -66,6 +66,8 @@ class PEP(ReferenceRole):
 		Process the role.
 		"""
 
+		assert self.inliner is not None
+
 		target_id = f"index-{self.env.new_serialno('index')}"
 		entries = [("single", _("Python Enhancement Proposals; PEP %s") % self.target, target_id, '', None)]
 
@@ -95,6 +97,8 @@ class PEP(ReferenceRole):
 		"""
 		Constrict the target URI for the reference node.
 		"""
+
+		assert self.inliner is not None
 
 		base_url: str = self.inliner.document.settings.pep_base_url  # type: ignore[attr-defined]
 		if base_url == "https://www.python.org/dev/peps/":
@@ -167,6 +171,8 @@ class CoreMetadata(ReferenceRole):
 		.. latex:clearpage::
 		"""
 
+		assert self.inliner is not None
+
 		target_id = f"index-{self.env.new_serialno('index')}"
 		entries = [("single", _("Core Metadata Field %s") % self.target, target_id, '', None)]
 
@@ -182,7 +188,7 @@ class CoreMetadata(ReferenceRole):
 
 	def build_uri(self) -> str:
 		"""
-		Constrict the target URI for the reference node.
+		Construct the target URI for the reference node.
 		"""
 
 		base_url: str = "https://packaging.python.org/specifications/core-metadata/"
