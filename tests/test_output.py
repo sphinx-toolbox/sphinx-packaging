@@ -6,11 +6,10 @@ import shutil
 import bs4.element  # type: ignore[import]
 import pytest
 from bs4 import BeautifulSoup
-from coincidence.regressions import AdvancedFileRegressionFixture
 from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.stringlist import StringList
 from sphinx.application import Sphinx
-from sphinx_toolbox.testing import HTMLRegressionFixture
+from sphinx_toolbox.testing import HTMLRegressionFixture, LaTeXRegressionFixture
 
 
 @pytest.fixture()
@@ -64,15 +63,12 @@ def test_html_output(app: Sphinx, html_regression: HTMLRegressionFixture) -> Non
 		if isinstance(first_child, bs4.element.Tag):
 			code.contents = [first_child.contents[0]]
 
-	html_regression.check(page)
+	html_regression.check(page, jinja2=True)
 
 
 @pytest.mark.usefixtures("doc_root")
 @pytest.mark.sphinx("latex", testroot="test-packaging")
-def test_latex_output(
-		app: Sphinx,
-		advanced_file_regression: AdvancedFileRegressionFixture,
-		) -> None:
+def test_latex_output(app: Sphinx, latex_regression: LaTeXRegressionFixture) -> None:
 
 	assert app.builder.name.lower() == "latex"
 
@@ -80,7 +76,7 @@ def test_latex_output(
 
 	output_file = PathPlus(app.outdir) / "python.tex"
 	content = StringList(output_file.read_lines())
-	advanced_file_regression.check(
-			re.sub(r"\\date{.*}", r"\\date{Mar 11, 2021}", str(content).replace("\\sphinxAtStartPar\n", '')),
-			extension=".tex",
+	latex_regression.check(
+			str(content).replace("\\sphinxAtStartPar\n", ''),
+			jinja2=True,
 			)

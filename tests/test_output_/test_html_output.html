@@ -1,8 +1,19 @@
+{% macro span_pre(text, indent='') -%}
+{% if sphinx_version >= (4, 0) %}<span class="pre">
+{{ indent }} {{ text }}
+{{ indent }}</span>{% else %}{{ text }}{% endif %}
+{%- endmacro -%}
+{% set heading = ("heading" if sphinx_version >= (5, 0) else 'headline') -%}
+{% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
+{% set sig_object_class=(' class="sig sig-object std"' if sphinx_version >= (4, 0) else '') -%}
+{% set section = ("section", "section") if docutils_version >= (0, 17) else ('div class="section"', "div") -%}
 <!DOCTYPE html>
-<html>
+<html{% if sphinx_version >= (5, 0) %} lang="en"{% endif %}>
  <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>{% if docutils_version > (0, 18) %}
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>{% elif docutils_version > (0, 17) %}
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>{% endif %}
   <title>
    sphinx-packaging demo — Python  documentation
   </title>
@@ -11,7 +22,9 @@
   <script src="_static/jquery.js">
   </script>
   <script src="_static/underscore.js">
-  </script>
+  </script>{% if sphinx_version >= (5, 0) %}
+  <script src="_static/_sphinx_javascript_frameworks_compat.js">
+  </script>{% endif %}
   <script src="_static/doctools.js">
   </script>
   <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
@@ -21,10 +34,10 @@
    <div class="documentwrapper">
     <div class="bodywrapper">
      <div class="body" role="main">
-      <div class="section" id="sphinx-packaging-demo">
+      <{{ section[0] }} id="sphinx-packaging-demo">
        <h1>
         sphinx-packaging demo
-        <a class="headerlink" href="#sphinx-packaging-demo" title="Permalink to this headline">
+        <a class="headerlink" href="#sphinx-packaging-demo" title="Permalink to this {{ heading }}">
          ¶
         </a>
        </h1>
@@ -520,13 +533,13 @@
         </a>
        </p>
        <dl class="std tconf">
-        <dt id="tconf-project.name">
-         <code class="sig-prename descclassname">
-          project.
-         </code>
-         <code class="sig-name descname">
-          name
-         </code>
+        <dt{{ sig_object_class }} id="tconf-project.name">
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
+          {{ span_pre("project.", "          ") }}
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
+          {{ span_pre("name", "          ") }}
+         </{{ sig_prename_tag }}>
          <a class="headerlink" href="#tconf-project.name" title="Permalink to this definition">
           ¶
          </a>
@@ -562,13 +575,13 @@
         </dd>
        </dl>
        <dl class="std tconf">
-        <dt id="tconf-project.version">
-         <code class="sig-prename descclassname">
-          project.
-         </code>
-         <code class="sig-name descname">
-          version
-         </code>
+        <dt{{ sig_object_class }} id="tconf-project.version">
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
+          {{ span_pre("project.", "          ") }}
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
+          {{ span_pre("version", "          ") }}
+         </{{ sig_prename_tag }}>
          <a class="headerlink" href="#tconf-project.version" title="Permalink to this definition">
           ¶
          </a>
@@ -612,10 +625,10 @@
         </dd>
        </dl>
        <dl class="std tconf">
-        <dt id="tconf-description">
-         <code class="sig-name descname">
-          description
-         </code>
+        <dt{{ sig_object_class }} id="tconf-description">
+         <{{ sig_prename_tag }} class="sig-name descname">
+          {{ span_pre("description", "          ") }}
+         </{{ sig_prename_tag }}>
          <a class="headerlink" href="#tconf-description" title="Permalink to this definition">
           ¶
          </a>
@@ -718,10 +731,10 @@ Some backends may be able to determine a value for
         .
        </p>
        <dl class="std tconf">
-        <dt>
-         <code class="sig-name descname">
-          description
-         </code>
+        <dt{{ sig_object_class }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
+          {{ span_pre("description", "          ") }}
+         </{{ sig_prename_tag }}>
         </dt>
         <dd>
          <div class="line-block">
@@ -779,13 +792,13 @@ Some backends may be able to determine a value for
         </dd>
        </dl>
        <dl class="std tconf">
-        <dt id="tconf-tool.something.name">
-         <code class="sig-prename descclassname">
-          tool.something.
-         </code>
-         <code class="sig-name descname">
-          name
-         </code>
+        <dt{{ sig_object_class }} id="tconf-tool.something.name">
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
+          {{ span_pre("tool.something.", "          ") }}
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
+          {{ span_pre("name", "          ") }}
+         </{{ sig_prename_tag }}>
          <a class="headerlink" href="#tconf-tool.something.name" title="Permalink to this definition">
           ¶
          </a>
@@ -846,7 +859,7 @@ Some backends may be able to determine a value for
         </a>
         directives, which is ambiguous.
        </p>
-      </div>
+      </{{ section[1] }}>
      </div>
     </div>
    </div>

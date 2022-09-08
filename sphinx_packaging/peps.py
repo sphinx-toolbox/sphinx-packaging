@@ -101,7 +101,7 @@ class PEP(ReferenceRole):
 		assert self.inliner is not None
 
 		base_url: str = self.inliner.document.settings.pep_base_url  # type: ignore[attr-defined]
-		if base_url == "https://www.python.org/dev/peps/":
+		if base_url == "https://www.python.org/dev/peps/":  # pragma: no cover
 			# Update URL
 			base_url = "https://peps.python.org/"
 		ret = self.target.split('#', 1)
