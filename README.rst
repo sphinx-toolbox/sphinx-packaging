@@ -91,7 +91,7 @@ sphinx-packaging
 .. |language| image:: https://img.shields.io/github/languages/top/sphinx-toolbox/sphinx-packaging
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-packaging/v0.1.1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-packaging/v0.2.0
 	:target: https://github.com/sphinx-toolbox/sphinx-packaging/pulse
 	:alt: GitHub commits since tagged version
 
