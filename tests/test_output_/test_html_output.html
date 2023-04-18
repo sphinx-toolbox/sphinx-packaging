@@ -1,5 +1,5 @@
 {% macro span_pre(text, indent='') -%}
-{% if sphinx_version >= (4, 0) %}<span class="pre">
+{% if sphinx_version >= (3, 5) %}<span class="pre">
 {{ indent }} {{ text }}
 {{ indent }}</span>{% else %}{{ text }}{% endif %}
 {%- endmacro -%}
