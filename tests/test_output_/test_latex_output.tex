@@ -8,7 +8,10 @@
     \pdfimageresolution= \numexpr \dimexpr1in\relax/\sphinxpxdimen\relax
 \fi
 %% let collapsable pdf bookmarks panel have high depth per default
-\PassOptionsToPackage{bookmarksdepth=5}{hyperref}
+\PassOptionsToPackage{bookmarksdepth=5}{hyperref}<% if sphinx_version >= (6, 0) %>
+
+\PassOptionsToPackage{booktabs}{sphinx}
+\PassOptionsToPackage{colorrows}{sphinx}<% endif %>
 <% endif %>
 \PassOptionsToPackage{warn}{textcomp}
 \usepackage[utf8]{inputenc}
