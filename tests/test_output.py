@@ -63,6 +63,11 @@ def test_html_output(app: Sphinx, html_regression: HTMLRegressionFixture) -> Non
 		if isinstance(first_child, bs4.element.Tag):
 			code.contents = [first_child.contents[0]]
 
+	for div in page.findAll("script"):
+		if div.get("src"):
+			div["src"] = div["src"].split("?v=")[0]
+			print(div["src"])
+
 	html_regression.check(page, jinja2=True)
 
 

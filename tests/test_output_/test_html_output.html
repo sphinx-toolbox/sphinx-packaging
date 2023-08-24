@@ -8,7 +8,7 @@
 {% set sig_object_class=(' class="sig sig-object std"' if sphinx_version >= (4, 0) else '') -%}
 {% set section = ("section", "section") if docutils_version >= (0, 17) else ('div class="section"', "div") -%}
 <!DOCTYPE html>
-<html{% if sphinx_version >= (5, 0) %} lang="en"{% endif %}>
+<html{% if sphinx_version >= (7, 2) %} data-content_root="./"{% endif %}{% if sphinx_version >= (5, 0) %} lang="en"{% endif %}>
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>{% if docutils_version > (0, 18) %}
@@ -17,7 +17,7 @@
   <title>
    sphinx-packaging demo — Python  documentation
   </title>
-  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+  <script{% if sphinx_version < (7, 2) %} data-url_root="./" id="documentation_options"{% endif %} src="_static/documentation_options.js">
   </script>{% if sphinx_version < (6, 0) %}
   <script src="_static/jquery.js">
   </script>
@@ -39,7 +39,7 @@
       <{{ section[0] }} id="sphinx-packaging-demo">
        <h1>
         sphinx-packaging demo
-        <a class="headerlink" href="#sphinx-packaging-demo" title="Permalink to this {{ heading }}">
+        <a class="headerlink" href="#sphinx-packaging-demo" title="{% if sphinx_version >= (7, 2) %}Link{% else %}Permalink{% endif %} to this {{ heading }}">
          ¶
         </a>
        </h1>
@@ -542,7 +542,7 @@
          <{{ sig_prename_tag }} class="sig-name descname">
           {{ span_pre("name", "          ") }}
          </{{ sig_prename_tag }}>
-         <a class="headerlink" href="#tconf-project.name" title="Permalink to this definition">
+         <a class="headerlink" href="#tconf-project.name" title="{% if sphinx_version >= (7, 2) %}Link{% else %}Permalink{% endif %} to this definition">
           ¶
          </a>
         </dt>
@@ -584,7 +584,7 @@
          <{{ sig_prename_tag }} class="sig-name descname">
           {{ span_pre("version", "          ") }}
          </{{ sig_prename_tag }}>
-         <a class="headerlink" href="#tconf-project.version" title="Permalink to this definition">
+         <a class="headerlink" href="#tconf-project.version" title="{% if sphinx_version >= (7, 2) %}Link{% else %}Permalink{% endif %} to this definition">
           ¶
          </a>
         </dt>
@@ -631,7 +631,7 @@
          <{{ sig_prename_tag }} class="sig-name descname">
           {{ span_pre("description", "          ") }}
          </{{ sig_prename_tag }}>
-         <a class="headerlink" href="#tconf-description" title="Permalink to this definition">
+         <a class="headerlink" href="#tconf-description" title="{% if sphinx_version >= (7, 2) %}Link{% else %}Permalink{% endif %} to this definition">
           ¶
          </a>
         </dt>
@@ -801,7 +801,7 @@ Some backends may be able to determine a value for
          <{{ sig_prename_tag }} class="sig-name descname">
           {{ span_pre("name", "          ") }}
          </{{ sig_prename_tag }}>
-         <a class="headerlink" href="#tconf-tool.something.name" title="Permalink to this definition">
+         <a class="headerlink" href="#tconf-tool.something.name" title="{% if sphinx_version >= (7, 2) %}Link{% else %}Permalink{% endif %} to this definition">
           ¶
          </a>
         </dt>
