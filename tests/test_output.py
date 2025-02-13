@@ -1,11 +1,11 @@
 # stdlib
 import re
 import shutil
+from typing import cast
 
 # 3rd party
-import bs4.element  # type: ignore[import]
 import pytest
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from domdf_python_tools.paths import PathPlus
 from domdf_python_tools.stringlist import StringList
 from sphinx.application import Sphinx
@@ -49,23 +49,26 @@ def test_html_output(app: Sphinx, html_regression: HTMLRegressionFixture) -> Non
 	page = BeautifulSoup(output_file.read_text(), "html5lib")
 
 	# Make sure the page title is what you expect
-	title = page.find("h1").contents[0].strip()
+	h1 = cast(Tag, page.find("h1"))
+	title = cast(str, h1.contents[0]).strip()
 	assert "sphinx-packaging demo" == title
 
-	code: bs4.element.Tag
 	for code in page.find_all("code", attrs={"class": "sig-prename descclassname"}):
+		assert isinstance(code, Tag)
 		first_child = code.contents[0]
-		if isinstance(first_child, bs4.element.Tag):
+		if isinstance(first_child, Tag):
 			code.contents = [first_child.contents[0]]
 
 	for code in page.find_all("code", attrs={"class": "sig-name descname"}):
+		assert isinstance(code, Tag)
 		first_child = code.contents[0]
-		if isinstance(first_child, bs4.element.Tag):
+		if isinstance(first_child, Tag):
 			code.contents = [first_child.contents[0]]
 
-	for div in page.findAll("script"):
+	for div in page.find_all("script"):
+		assert isinstance(div, Tag)
 		if div.get("src"):
-			div["src"] = div["src"].split("?v=")[0]
+			div["src"] = cast(str, div["src"]).split("?v=")[0]
 			print(div["src"])
 
 	html_regression.check(page, jinja2=True)
