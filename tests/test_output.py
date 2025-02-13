@@ -1,5 +1,4 @@
 # stdlib
-import re
 import shutil
 from typing import cast
 

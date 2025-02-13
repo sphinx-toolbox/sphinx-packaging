@@ -38,7 +38,7 @@ and the :rst:role:`core-meta` role for referencing sections in Python's core met
 
 # stdlib
 import re
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Tuple
 
 # 3rd party
 from docutils import nodes

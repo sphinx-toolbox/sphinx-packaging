@@ -35,7 +35,7 @@ Sphinx extension which adds the :rst:role:`toml` role for referencing sections o
 
 # stdlib
 import re
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Tuple
 
 # 3rd party
 from docutils import nodes
