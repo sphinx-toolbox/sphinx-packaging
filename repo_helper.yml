@@ -24,7 +24,7 @@ conda_channels:
 
 # Versions to run tests for
 python_versions:
- '3.7':
+ 3.7:
   matrix_exclude:
    sphinx:
     - 6.0
@@ -33,12 +33,32 @@ python_versions:
     - 7.0
     - 7.1
     - 7.2
- '3.8':
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
+ 3.8:
   matrix_exclude:
    sphinx:
     - 7.2
- '3.9':
- '3.10':
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
+ 3.9:
+  matrix_exclude:
+   sphinx:
+    - 8.0
+    - 8.1
+    - 8.2
+ "3.10":
+  matrix_exclude:
+   sphinx:
+    - 8.2
  "3.11":
  "3.12":
   matrix_exclude:
@@ -73,17 +93,57 @@ python_versions:
  pypy37:
   matrix_exclude:
    sphinx:
+    - 3.2
+    - 3.3
+    - 3.4
+    - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
     - 6.0
     - 6.1
     - 6.2
     - 7.0
     - 7.1
     - 7.2
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
  pypy38:
   matrix_exclude:
    sphinx:
+    - 3.2
+    - 3.3
+    - 3.4
+    - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
     - 7.2
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
  pypy39:
+  matrix_exclude:
+   sphinx:
+    - 3.2
+    - 3.3
+    - 3.4
+    - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
+
 
 sphinx_conf_epilogue:
  - nitpicky = True
@@ -143,6 +203,11 @@ third_party_version_matrix:
     - 7.0
     - 7.1
     - 7.2
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
 
 mypy_deps:
  - types-docutils

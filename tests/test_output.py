@@ -1,6 +1,6 @@
 # stdlib
 import shutil
-from typing import cast
+from typing import Dict, List, cast
 
 # 3rd party
 import pytest
@@ -18,6 +18,8 @@ def doc_root(tmp_pathplus: PathPlus) -> None:
 	(doc_root / "conf.py").write_lines([
 			"extensions = ['sphinx_packaging']",
 			"toml_spec_version = '0.5.0'",
+			"project = 'Python'",
+			"author = 'unknown'",
 			])
 
 	shutil.copy2(PathPlus(__file__).parent / "index.rst", doc_root / "index.rst")
@@ -69,6 +71,10 @@ def test_html_output(app: Sphinx, html_regression: HTMLRegressionFixture) -> Non
 		if div.get("src"):
 			div["src"] = cast(str, div["src"]).split("?v=")[0]
 			print(div["src"])
+
+	for meta in cast(List[Dict], page.find_all("meta")):
+		if meta.get("content", '') == "width=device-width, initial-scale=0.9, maximum-scale=0.9":
+			meta.extract()  # type: ignore[attr-defined]
 
 	html_regression.check(page, jinja2=True)
 

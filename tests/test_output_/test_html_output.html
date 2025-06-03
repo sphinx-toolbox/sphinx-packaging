@@ -15,7 +15,7 @@
   {% if docutils_version[1] == 18 %}<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
   {% elif docutils_version[1] == 17 %}<meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   {% elif docutils_version[1] == 19 %}<meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
-  {% elif docutils_version[1] == 20 %}<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  {% elif docutils_version[1] >= 20 %}<meta content="width=device-width, initial-scale=1" name="viewport"/>
   {% endif %}<title>
    sphinx-packaging demo — Python  documentation
   </title>
@@ -30,8 +30,7 @@
   <script src="_static/doctools.js">
   </script>{% if sphinx_version >= (5, 2) %}
   <script src="_static/sphinx_highlight.js">
-  </script>{% endif %}{% if sphinx_version < (7, 2) or python_version >= (3, 12) %}
-  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>{% endif %}
+  </script>{% endif %}
  </head>
  <body>
   <div class="document">
