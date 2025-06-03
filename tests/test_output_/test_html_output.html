@@ -862,7 +862,9 @@ Some backends may be able to determine a value for
         </a>
         directives, which is ambiguous.
        </p>
-      </{{ section[1] }}>
+      </{{ section[1] }}>{% if sphinx_version >= (8, 1) %}
+      <div class="clearer">
+      </div>{% endif %}
      </div>
     </div>
    </div>
