@@ -82,7 +82,7 @@ class TOML(ReferenceRole):
 			index = addnodes.index(entries=entries)
 			target = nodes.target('', '', ids=[target_id])
 			node_list.extend((index, target))
-			self.inliner.document.note_explicit_target(target)  # type: ignore[attr-defined]
+			self.inliner.document.note_explicit_target(target)
 
 		refuri = self.build_uri()
 		reference = nodes.reference('', '', internal=False, refuri=refuri, classes=["toml-xref"])

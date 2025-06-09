@@ -73,7 +73,7 @@ class PEP(ReferenceRole):
 
 		index = addnodes.index(entries=entries)
 		target = nodes.target('', '', ids=[target_id])
-		self.inliner.document.note_explicit_target(target)  # type: ignore[attr-defined]
+		self.inliner.document.note_explicit_target(target)
 
 		try:
 			refuri = self.build_uri()
@@ -84,11 +84,11 @@ class PEP(ReferenceRole):
 				title = f"PEP {self.title}"
 				reference += nodes.strong(title, title)
 		except ValueError:
-			msg = self.inliner.reporter.error(  # type: ignore[attr-defined]
-				f"invalid PEP number {self.target}",
-				line=self.lineno,
-				)
-			prb = self.inliner.problematic(self.rawtext, self.rawtext, msg)  # type: ignore[attr-defined]
+			msg = self.inliner.reporter.error(
+					f"invalid PEP number {self.target}",
+					line=self.lineno,
+					)
+			prb = self.inliner.problematic(self.rawtext, self.rawtext, msg)
 			return [prb], [msg]
 
 		return [index, target, reference], []
@@ -100,7 +100,7 @@ class PEP(ReferenceRole):
 
 		assert self.inliner is not None
 
-		base_url: str = self.inliner.document.settings.pep_base_url  # type: ignore[attr-defined]
+		base_url: str = self.inliner.document.settings.pep_base_url
 		if base_url == "https://www.python.org/dev/peps/":  # pragma: no cover
 			# Update URL
 			base_url = "https://peps.python.org/"
@@ -178,7 +178,7 @@ class CoreMetadata(ReferenceRole):
 
 		index = addnodes.index(entries=entries)
 		target = nodes.target('', '', ids=[target_id])
-		self.inliner.document.note_explicit_target(target)  # type: ignore[attr-defined]
+		self.inliner.document.note_explicit_target(target)
 
 		refuri = self.build_uri()
 		reference = nodes.reference('', '', internal=False, refuri=refuri, classes=["pep"])
