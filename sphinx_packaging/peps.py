@@ -125,7 +125,7 @@ class PEP621Section(PEP):
 		lineno: int,
 		inliner: Inliner,
 		options: Dict = {},
-		content: List[str] = []
+		content: List[str] = [],
 		) -> Tuple[List[Node], List[system_message]]:
 
 		matched = self.explicit_title_re.match(text)

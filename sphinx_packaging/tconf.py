@@ -82,7 +82,7 @@ __all__ = ["TConfXRefRole", "TOMLConf", "resolve_xref", "setup"]
 logger = logging.getLogger(__name__)
 
 
-def _flag(argument: Any) -> bool:
+def _flag(argument: Any) -> bool:  # noqa: PRM002
 	"""
 	Check for a valid flag option (no argument) and return :py:obj:`True`.
 
