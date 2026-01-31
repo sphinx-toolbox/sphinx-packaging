@@ -126,7 +126,7 @@ class PEP621Section(PEP):
 		inliner: Inliner,
 		options: Dict = {},
 		content: List[str] = [],
-		) -> Tuple[List[Node], List[system_message]]:
+	) -> Tuple[List[Node], List[system_message]]:
 
 		matched = self.explicit_title_re.match(text)
 		if matched:
@@ -139,14 +139,14 @@ class PEP621Section(PEP):
 			self.target = f"621#{unescape(text)}"
 
 		if self.target in {
-				f"621#dependencies",
-				f"621#optional-dependencies",
-				f"621#dependencies/optional-dependencies",
+				"621#dependencies",
+				"621#optional-dependencies",
+				"621#dependencies/optional-dependencies",
 				}:
-			self.target = f"621#dependencies-optional-dependencies"
+			self.target = "621#dependencies-optional-dependencies"
 
-		elif self.target in {f"621#authors", f"621#maintainers", f"621#authors/maintainers"}:
-			self.target = f"621#authors-maintainers"
+		elif self.target in {"621#authors", "621#maintainers", "621#authors/maintainers"}:
+			self.target = "621#authors-maintainers"
 
 		return SphinxRole.__call__(self, name, rawtext, text, lineno, inliner, options, content)
 

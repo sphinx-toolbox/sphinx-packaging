@@ -112,7 +112,7 @@ class TOMLConf(GenericObject):
 		"required": directives.unchanged_required,
 		"default": directives.unchanged_required,
 		"noindex": _flag,
-		}
+	}
 
 	def run(self) -> List[Node]:
 		"""
