@@ -8,7 +8,7 @@ username: 'sphinx-toolbox'
 assignee: 'domdfcoding'
 primary_conda_channel: "domdfcoding"
 version: '0.3.0.post1'
-license: 'BSD'
+license: 'BSD-2-Clause'
 short_desc: 'A collection of Sphinx utilities related to Python packaging.'
 
 use_whey: true
